@@ -1,3 +1,31 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
 set shell=/bin/bash
 set bg=dark             "顯示不同的底色色調
 set nu                  "可以在每一行的最前面顯示行號啦！
@@ -23,10 +51,6 @@ let g:airline#extensions#hunks#enabled = 1
 
 "ctrl+t 开启nerdtree
 map <C-t> :NERDTreeToggle<CR>
-"shortcut to copy/cut selection to system clipboard
-vmap <C-x> :!pbcopy<CR>  
-vmap <C-c> :w !pbcopy<CR><CR> 
-vmap <C-v> :!pbpaste<CR><CR> 
 filetype plugin on
 
 "fix the bug that mac use a different ctags
@@ -79,4 +103,12 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
-nnoremap <Leader>r :RunInInteractiveShell<space>
+" For local replace
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+
+" For global replace
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+
+
+map gm :call cursor(0, virtcol('$')/2)<CR>

@@ -1,12 +1,46 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/lbwang/.oh-my-zsh
 
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+q(){
+  local d=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++))
+    do
+      d=$d/..
+    done
+  d=$(echo $d | sed 's/^\///')
+  if [ -z "$d" ]; then
+    d=..
+  fi
+  cd $d
+}
+
+
+gob(){
+url=$1
+name=${url##*/}
+echo $name
+name=${name%.*} 
+echo $name
+gcl $url&&c $name&&oi
+}
+
+
+go(){
+url=$1
+name=${url##*/}
+echo $name
+name=${name%.*} 
+echo $name
+gcl $url&&c $name
+grdi
+oi
+}
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,8 +86,8 @@ plugins=(git autojump)
 
 export PATH="/usr/local/Cellar/vim/7.4.488/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
+
 source ~/.bash_profile
 
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
@@ -83,41 +117,6 @@ source ~/.bash_profile
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 #
-q(){
-  local d=""
-  limit=$1
-  for ((i=1 ; i <= limit ; i++))
-    do
-      d=$d/..
-    done
-  d=$(echo $d | sed 's/^\///')
-  if [ -z "$d" ]; then
-    d=..
-  fi
-  cd $d
-}
-
-gob(){
-url=$1
-name=${url##*/}
-echo $name
-name=${name%.*} 
-echo $name
-gcl $url&&c $name&&oi
-}
-
-
-go(){
-url=$1
-name=${url##*/}
-echo $name
-name=${name%.*} 
-echo $name
-gcl $url&&c $name
-grdi
-oi
-}
-
 
 HISTSIZE=10000000
 SAVEHIST=10000000

@@ -24,6 +24,7 @@ alias gae="cd /Users/lbwang/Desktop/personal/goagent-3.0/local && python proxy.p
 
 alias m="cd /Users/lbwang/Desktop/personal"
 
+alias f="fg"
 alias g="git"
 alias gps="git push"
 alias gs="git status"
@@ -34,8 +35,8 @@ alias gd="git difftool"
 alias grt="git checkout -head"
 alias gb="git checkout"
 alias gc="git commit -m"
-alias tr="tree"
 alias v="vim"
+alias cx="chmod +x"
 alias rmd="rm -rf"
 alias cpr="cp -r"
 alias eb="vim ~/.bash_profile"
