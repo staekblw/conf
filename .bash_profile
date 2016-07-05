@@ -3,7 +3,7 @@
 ##
 
 # MacPorts Installer addition on 2015-03-08_at_21:07:53: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
@@ -17,12 +17,11 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 export PATH="/usr/local/Cellar/vim/7.4.488/bin:$PATH" 
 
 set -o vi
-alias p="cd ~/Desktop/projects/"
+alias p="cd ~/Desktop/project/"
 alias doc="cd ~/Desktop/work-doc/"
-alias p1="cd /Users/lbwang/Desktop/projects/asit-parent/asit-gui/"
-alias gae="cd /Users/lbwang/Desktop/personal/goagent-3.0/local && python proxy.py"
-
-alias m="cd /Users/lbwang/Desktop/personal"
+alias px="cd /Users/apple/Desktop/goagent-3.0/local && python proxy.py"
+alias a="cd /Users/apple/Desktop/vpn/ && ./vpn connect"
+alias as="cd /Users/apple/Desktop/vpn/ && ./vpn disconnect"
 
 alias f="fg"
 alias g="git"
@@ -42,8 +41,8 @@ alias cpr="cp -r"
 alias eb="vim ~/.bash_profile"
 alias ez="vim ~/.zshrc"
 alias eg="vim ~/.gitconfig"
-alias s="source ~/.zshrc && source ~/.bash_profile && cp ~/.bash_profile ~/github/conf/.bash_profile && cp ~/.vimrc ~/github/conf/.vimrc && cp ~/.zshrc ~/github/conf/.zshrc"
-alias ..="cd .."
+alias s="source ~/.zshrc && source ~/.bash_profile"
+alias q="cd .."
 alias c="cd"
 alias rb="ruby"
 alias l="ls"
@@ -55,16 +54,12 @@ alias md="mkdir -p"
 alias ec="echo"
 alias tc="touch"
 alias o="open ."
-alias oi="idea ."
+alias oi="open -b com.jetbrains.intellij ."
 alias grdi="./gradlew cleanIdea idea"
 alias grd="./gradlew clean build"
 alias grdjr="./gradlew jR"
 # ssh shortcut
 alias 177="ssh build@10.38.21.177"
-alias 61="ssh p_dev@10.38.23.61"
-alias 64="ssh p_dev@10.38.23.64"
-alias 60="ssh p_dev@10.38.23.60"
-alias 110="ssh appadmin@10.99.246.110"
 
 alias -s html=vi
 alias -s md=vi
